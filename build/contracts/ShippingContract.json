@@ -1,0 +1,2401 @@
+{
+  "contractName": "ShippingContract",
+  "abi": [
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "Id",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "internalType": "enum ShippingContract.StateCommand",
+          "name": "",
+          "type": "uint8"
+        }
+      ],
+      "name": "Creation",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "Id",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "internalType": "enum ShippingContract.StateCommand",
+          "name": "",
+          "type": "uint8"
+        }
+      ],
+      "name": "Delivered",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "Id",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "internalType": "enum ShippingContract.StateCommand",
+          "name": "",
+          "type": "uint8"
+        }
+      ],
+      "name": "Shipped",
+      "type": "event"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "Id",
+          "type": "uint256"
+        }
+      ],
+      "name": "newCommand",
+      "outputs": [],
+      "payable": true,
+      "stateMutability": "payable",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "Id",
+          "type": "uint256"
+        }
+      ],
+      "name": "setShipped",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "Id",
+          "type": "uint256"
+        }
+      ],
+      "name": "setDelivered",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "getStatus",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    }
+  ],
+  "metadata": "{\"compiler\":{\"version\":\"0.5.16+commit.9c3226ce\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"Id\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"enum ShippingContract.StateCommand\",\"name\":\"\",\"type\":\"uint8\"}],\"name\":\"Creation\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"Id\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"enum ShippingContract.StateCommand\",\"name\":\"\",\"type\":\"uint8\"}],\"name\":\"Delivered\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"Id\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"enum ShippingContract.StateCommand\",\"name\":\"\",\"type\":\"uint8\"}],\"name\":\"Shipped\",\"type\":\"event\"},{\"constant\":true,\"inputs\":[],\"name\":\"getStatus\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"Id\",\"type\":\"uint256\"}],\"name\":\"newCommand\",\"outputs\":[],\"payable\":true,\"stateMutability\":\"payable\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"Id\",\"type\":\"uint256\"}],\"name\":\"setDelivered\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"Id\",\"type\":\"uint256\"}],\"name\":\"setShipped\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"methods\":{}},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"/C/Users/Alban/Desktop/Git/ShippingProject/contracts/ShippingContract.sol\":\"ShippingContract\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"/C/Users/Alban/Desktop/Git/ShippingProject/contracts/ShippingContract.sol\":{\"keccak256\":\"0x9282c69d6c3daeb7133d3af5fc9a00a78eef64a002fd380f5193864498809379\",\"urls\":[\"bzz-raw://8d758367381b644c04bd09fb79532df0b6d14aed941ae7c8382a766f2f513751\",\"dweb:/ipfs/QmfZb4grC6MPs15Kda8zaFoEaGq4rdj1tG4UJCA63de4PY\"]}},\"version\":1}",
+  "bytecode": "0x608060405234801561001057600080fd5b506102c9806100206000396000f3fe60806040526004361061003f5760003560e01c8063090c9a6f146100445780634e69d560146100725780636f5aebe31461009d578063e5452fc4146100d8575b600080fd5b6100706004803603602081101561005a57600080fd5b8101908080359060200190929190505050610113565b005b34801561007e57600080fd5b50610087610171565b6040518082815260200191505060405180910390f35b3480156100a957600080fd5b506100d6600480360360208110156100c057600080fd5b8101908080359060200190929190505050610192565b005b3480156100e457600080fd5b50610111600480360360208110156100fb57600080fd5b8101908080359060200190929190505050610213565b005b7f23a38858319b2bfb79dd323dcbb87362205f37a764df09cb2e6d565e799182de816000809054906101000a900460ff166040518083815260200182600281111561015a57fe5b60ff1681526020019250505060405180910390a150565b60008060009054906101000a900460ff16600281111561018d57fe5b905090565b60026000806101000a81548160ff021916908360028111156101b057fe5b02179055507f21f45ea5ef45b74169db01fb87d26e4f830a4304f39388458d1c72f9b09c089d816000809054906101000a900460ff16604051808381526020018260028111156101fc57fe5b60ff1681526020019250505060405180910390a150565b60016000806101000a81548160ff0219169083600281111561023157fe5b02179055507f8a17c0978b995d01697b48df129ab4eb266bf16bbd82300259d75aa23a20b528816000809054906101000a900460ff166040518083815260200182600281111561027d57fe5b60ff1681526020019250505060405180910390a15056fea265627a7a72315820ac184e8e648a91ca732fc645922bc41d8794282f6a15e6e6dad6f9a391423d4864736f6c63430005100032",
+  "deployedBytecode": "0x60806040526004361061003f5760003560e01c8063090c9a6f146100445780634e69d560146100725780636f5aebe31461009d578063e5452fc4146100d8575b600080fd5b6100706004803603602081101561005a57600080fd5b8101908080359060200190929190505050610113565b005b34801561007e57600080fd5b50610087610171565b6040518082815260200191505060405180910390f35b3480156100a957600080fd5b506100d6600480360360208110156100c057600080fd5b8101908080359060200190929190505050610192565b005b3480156100e457600080fd5b50610111600480360360208110156100fb57600080fd5b8101908080359060200190929190505050610213565b005b7f23a38858319b2bfb79dd323dcbb87362205f37a764df09cb2e6d565e799182de816000809054906101000a900460ff166040518083815260200182600281111561015a57fe5b60ff1681526020019250505060405180910390a150565b60008060009054906101000a900460ff16600281111561018d57fe5b905090565b60026000806101000a81548160ff021916908360028111156101b057fe5b02179055507f21f45ea5ef45b74169db01fb87d26e4f830a4304f39388458d1c72f9b09c089d816000809054906101000a900460ff16604051808381526020018260028111156101fc57fe5b60ff1681526020019250505060405180910390a150565b60016000806101000a81548160ff0219169083600281111561023157fe5b02179055507f8a17c0978b995d01697b48df129ab4eb266bf16bbd82300259d75aa23a20b528816000809054906101000a900460ff166040518083815260200182600281111561027d57fe5b60ff1681526020019250505060405180910390a15056fea265627a7a72315820ac184e8e648a91ca732fc645922bc41d8794282f6a15e6e6dad6f9a391423d4864736f6c63430005100032",
+  "sourceMap": "69:1265:0:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;69:1265:0;;;;;;;",
+  "deployedSourceMap": "69:1265:0:-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;717:92;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;717:92:0;;;;;;;;;;;;;;;;;:::i;:::-;;1241:88;;8:9:-1;5:2;;;30:1;27;20:12;5:2;1241:88:0;;;:::i;:::-;;;;;;;;;;;;;;;;;;;1060:127;;8:9:-1;5:2;;;30:1;27;20:12;5:2;1060:127:0;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;1060:127:0;;;;;;;;;;;;;;;;;:::i;:::-;;873:121;;8:9:-1;5:2;;;30:1;27;20:12;5:2;873:121:0;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;873:121:0;;;;;;;;;;;;;;;;;:::i;:::-;;717:92;779:20;788:2;792:6;;;;;;;;;;;779:20;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;717:92;:::o;1241:88::-;1283:4;1312:6;;;;;;;;;;;1307:12;;;;;;;;1300:19;;1241:88;:::o;1060:127::-;1118:22;1109:6;;:31;;;;;;;;;;;;;;;;;;;;;;;;1156:21;1166:2;1170:6;;;;;;;;;;;1156:21;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1060:127;:::o;873:121::-;929:20;920:6;;:29;;;;;;;;;;;;;;;;;;;;;;;;965:19;973:2;977:6;;;;;;;;;;;965:19;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;873:121;:::o",
+  "source": "// SPDX-License-Identifier: MIT\r\npragma solidity >=0.4.22 <0.9.0;\r\n\r\ncontract ShippingContract {\r\n    \r\n    //Création d'une variable pour l'état du colis avec plusieurs valeurs prédéfinies\r\n    enum StateCommand {Pending, Shipped, Delivered}\r\n    StateCommand status;\r\n    StateCommand constant defaultChoice = StateCommand.Pending; //Fixe la valeur par défaut sur Pending\r\n\r\n    //Création des évènements\r\n    event Creation(uint Id, StateCommand);\r\n    event Shipped(uint Id, StateCommand);\r\n    event Delivered(uint Id, StateCommand);\r\n\r\n    //Création de la structure du colis\r\n    struct colis {\r\n        uint Id;\r\n        string status;\r\n    }\r\n\r\n    //Fonction pour créer une nouvelle commande\r\n    function newCommand(uint Id) external payable {\r\n        emit Creation(Id, status);\r\n\r\n    }\r\n\r\n    //Fonction pour passer l'état du colis à Shipped\r\n    function setShipped(uint Id) public {\r\n        status = StateCommand.Shipped;\r\n        emit Shipped(Id, status);\r\n\r\n    }\r\n\r\n    //Fonction pour passer l'état du colis à Delivered\r\n    function setDelivered(uint Id) public {\r\n        status = StateCommand.Delivered;\r\n        emit Delivered(Id, status);\r\n\r\n    }\r\n\r\n    //Fonction pour obtenir l'état du colis\r\n    function getStatus() public view returns (uint) {\r\n        return uint(status);\r\n\r\n    }\r\n\r\n}",
+  "sourcePath": "C:/Users/Alban/Desktop/Git/ShippingProject/contracts/ShippingContract.sol",
+  "ast": {
+    "absolutePath": "/C/Users/Alban/Desktop/Git/ShippingProject/contracts/ShippingContract.sol",
+    "exportedSymbols": {
+      "ShippingContract": [
+        88
+      ]
+    },
+    "id": 89,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 1,
+        "literals": [
+          "solidity",
+          ">=",
+          "0.4",
+          ".22",
+          "<",
+          "0.9",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "33:32:0"
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 88,
+        "linearizedBaseContracts": [
+          88
+        ],
+        "name": "ShippingContract",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "canonicalName": "ShippingContract.StateCommand",
+            "id": 5,
+            "members": [
+              {
+                "id": 2,
+                "name": "Pending",
+                "nodeType": "EnumValue",
+                "src": "218:7:0"
+              },
+              {
+                "id": 3,
+                "name": "Shipped",
+                "nodeType": "EnumValue",
+                "src": "227:7:0"
+              },
+              {
+                "id": 4,
+                "name": "Delivered",
+                "nodeType": "EnumValue",
+                "src": "236:9:0"
+              }
+            ],
+            "name": "StateCommand",
+            "nodeType": "EnumDefinition",
+            "src": "199:47:0"
+          },
+          {
+            "constant": false,
+            "id": 7,
+            "name": "status",
+            "nodeType": "VariableDeclaration",
+            "scope": 88,
+            "src": "252:19:0",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_enum$_StateCommand_$5",
+              "typeString": "enum ShippingContract.StateCommand"
+            },
+            "typeName": {
+              "contractScope": null,
+              "id": 6,
+              "name": "StateCommand",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 5,
+              "src": "252:12:0",
+              "typeDescriptions": {
+                "typeIdentifier": "t_enum$_StateCommand_$5",
+                "typeString": "enum ShippingContract.StateCommand"
+              }
+            },
+            "value": null,
+            "visibility": "internal"
+          },
+          {
+            "constant": true,
+            "id": 11,
+            "name": "defaultChoice",
+            "nodeType": "VariableDeclaration",
+            "scope": 88,
+            "src": "278:58:0",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_enum$_StateCommand_$5",
+              "typeString": "enum ShippingContract.StateCommand"
+            },
+            "typeName": {
+              "contractScope": null,
+              "id": 8,
+              "name": "StateCommand",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 5,
+              "src": "278:12:0",
+              "typeDescriptions": {
+                "typeIdentifier": "t_enum$_StateCommand_$5",
+                "typeString": "enum ShippingContract.StateCommand"
+              }
+            },
+            "value": {
+              "argumentTypes": null,
+              "expression": {
+                "argumentTypes": null,
+                "id": 9,
+                "name": "StateCommand",
+                "nodeType": "Identifier",
+                "overloadedDeclarations": [],
+                "referencedDeclaration": 5,
+                "src": "316:12:0",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_type$_t_enum$_StateCommand_$5_$",
+                  "typeString": "type(enum ShippingContract.StateCommand)"
+                }
+              },
+              "id": 10,
+              "isConstant": false,
+              "isLValue": false,
+              "isPure": true,
+              "lValueRequested": false,
+              "memberName": "Pending",
+              "nodeType": "MemberAccess",
+              "referencedDeclaration": null,
+              "src": "316:20:0",
+              "typeDescriptions": {
+                "typeIdentifier": "t_enum$_StateCommand_$5",
+                "typeString": "enum ShippingContract.StateCommand"
+              }
+            },
+            "visibility": "internal"
+          },
+          {
+            "anonymous": false,
+            "documentation": null,
+            "id": 17,
+            "name": "Creation",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 16,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 13,
+                  "indexed": false,
+                  "name": "Id",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 17,
+                  "src": "435:7:0",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 12,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "435:4:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 15,
+                  "indexed": false,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 17,
+                  "src": "444:12:0",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_enum$_StateCommand_$5",
+                    "typeString": "enum ShippingContract.StateCommand"
+                  },
+                  "typeName": {
+                    "contractScope": null,
+                    "id": 14,
+                    "name": "StateCommand",
+                    "nodeType": "UserDefinedTypeName",
+                    "referencedDeclaration": 5,
+                    "src": "444:12:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_enum$_StateCommand_$5",
+                      "typeString": "enum ShippingContract.StateCommand"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "434:23:0"
+            },
+            "src": "420:38:0"
+          },
+          {
+            "anonymous": false,
+            "documentation": null,
+            "id": 23,
+            "name": "Shipped",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 22,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 19,
+                  "indexed": false,
+                  "name": "Id",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 23,
+                  "src": "478:7:0",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 18,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "478:4:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 21,
+                  "indexed": false,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 23,
+                  "src": "487:12:0",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_enum$_StateCommand_$5",
+                    "typeString": "enum ShippingContract.StateCommand"
+                  },
+                  "typeName": {
+                    "contractScope": null,
+                    "id": 20,
+                    "name": "StateCommand",
+                    "nodeType": "UserDefinedTypeName",
+                    "referencedDeclaration": 5,
+                    "src": "487:12:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_enum$_StateCommand_$5",
+                      "typeString": "enum ShippingContract.StateCommand"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "477:23:0"
+            },
+            "src": "464:37:0"
+          },
+          {
+            "anonymous": false,
+            "documentation": null,
+            "id": 29,
+            "name": "Delivered",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 28,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 25,
+                  "indexed": false,
+                  "name": "Id",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 29,
+                  "src": "523:7:0",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 24,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "523:4:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 27,
+                  "indexed": false,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 29,
+                  "src": "532:12:0",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_enum$_StateCommand_$5",
+                    "typeString": "enum ShippingContract.StateCommand"
+                  },
+                  "typeName": {
+                    "contractScope": null,
+                    "id": 26,
+                    "name": "StateCommand",
+                    "nodeType": "UserDefinedTypeName",
+                    "referencedDeclaration": 5,
+                    "src": "532:12:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_enum$_StateCommand_$5",
+                      "typeString": "enum ShippingContract.StateCommand"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "522:23:0"
+            },
+            "src": "507:39:0"
+          },
+          {
+            "canonicalName": "ShippingContract.colis",
+            "id": 34,
+            "members": [
+              {
+                "constant": false,
+                "id": 31,
+                "name": "Id",
+                "nodeType": "VariableDeclaration",
+                "scope": 34,
+                "src": "620:7:0",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                },
+                "typeName": {
+                  "id": 30,
+                  "name": "uint",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "620:4:0",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 33,
+                "name": "status",
+                "nodeType": "VariableDeclaration",
+                "scope": 34,
+                "src": "638:13:0",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_string_storage_ptr",
+                  "typeString": "string"
+                },
+                "typeName": {
+                  "id": 32,
+                  "name": "string",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "638:6:0",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_storage_ptr",
+                    "typeString": "string"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              }
+            ],
+            "name": "colis",
+            "nodeType": "StructDefinition",
+            "scope": 88,
+            "src": "596:63:0",
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 44,
+              "nodeType": "Block",
+              "src": "763:46:0",
+              "statements": [
+                {
+                  "eventCall": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 40,
+                        "name": "Id",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 36,
+                        "src": "788:2:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "id": 41,
+                        "name": "status",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 7,
+                        "src": "792:6:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_enum$_StateCommand_$5",
+                          "typeString": "enum ShippingContract.StateCommand"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        },
+                        {
+                          "typeIdentifier": "t_enum$_StateCommand_$5",
+                          "typeString": "enum ShippingContract.StateCommand"
+                        }
+                      ],
+                      "id": 39,
+                      "name": "Creation",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 17,
+                      "src": "779:8:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_event_nonpayable$_t_uint256_$_t_enum$_StateCommand_$5_$returns$__$",
+                        "typeString": "function (uint256,enum ShippingContract.StateCommand)"
+                      }
+                    },
+                    "id": 42,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "779:20:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 43,
+                  "nodeType": "EmitStatement",
+                  "src": "774:25:0"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 45,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "newCommand",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 37,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 36,
+                  "name": "Id",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 45,
+                  "src": "737:7:0",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 35,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "737:4:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "736:9:0"
+            },
+            "returnParameters": {
+              "id": 38,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "763:0:0"
+            },
+            "scope": 88,
+            "src": "717:92:0",
+            "stateMutability": "payable",
+            "superFunction": null,
+            "visibility": "external"
+          },
+          {
+            "body": {
+              "id": 60,
+              "nodeType": "Block",
+              "src": "909:85:0",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 53,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "id": 50,
+                      "name": "status",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 7,
+                      "src": "920:6:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_enum$_StateCommand_$5",
+                        "typeString": "enum ShippingContract.StateCommand"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 51,
+                        "name": "StateCommand",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 5,
+                        "src": "929:12:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_type$_t_enum$_StateCommand_$5_$",
+                          "typeString": "type(enum ShippingContract.StateCommand)"
+                        }
+                      },
+                      "id": 52,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": true,
+                      "lValueRequested": false,
+                      "memberName": "Shipped",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": null,
+                      "src": "929:20:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_enum$_StateCommand_$5",
+                        "typeString": "enum ShippingContract.StateCommand"
+                      }
+                    },
+                    "src": "920:29:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_enum$_StateCommand_$5",
+                      "typeString": "enum ShippingContract.StateCommand"
+                    }
+                  },
+                  "id": 54,
+                  "nodeType": "ExpressionStatement",
+                  "src": "920:29:0"
+                },
+                {
+                  "eventCall": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 56,
+                        "name": "Id",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 47,
+                        "src": "973:2:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "id": 57,
+                        "name": "status",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 7,
+                        "src": "977:6:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_enum$_StateCommand_$5",
+                          "typeString": "enum ShippingContract.StateCommand"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        },
+                        {
+                          "typeIdentifier": "t_enum$_StateCommand_$5",
+                          "typeString": "enum ShippingContract.StateCommand"
+                        }
+                      ],
+                      "id": 55,
+                      "name": "Shipped",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 23,
+                      "src": "965:7:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_event_nonpayable$_t_uint256_$_t_enum$_StateCommand_$5_$returns$__$",
+                        "typeString": "function (uint256,enum ShippingContract.StateCommand)"
+                      }
+                    },
+                    "id": 58,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "965:19:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 59,
+                  "nodeType": "EmitStatement",
+                  "src": "960:24:0"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 61,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "setShipped",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 48,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 47,
+                  "name": "Id",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 61,
+                  "src": "893:7:0",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 46,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "893:4:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "892:9:0"
+            },
+            "returnParameters": {
+              "id": 49,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "909:0:0"
+            },
+            "scope": 88,
+            "src": "873:121:0",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 76,
+              "nodeType": "Block",
+              "src": "1098:89:0",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 69,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "id": 66,
+                      "name": "status",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 7,
+                      "src": "1109:6:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_enum$_StateCommand_$5",
+                        "typeString": "enum ShippingContract.StateCommand"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 67,
+                        "name": "StateCommand",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 5,
+                        "src": "1118:12:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_type$_t_enum$_StateCommand_$5_$",
+                          "typeString": "type(enum ShippingContract.StateCommand)"
+                        }
+                      },
+                      "id": 68,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": true,
+                      "lValueRequested": false,
+                      "memberName": "Delivered",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": null,
+                      "src": "1118:22:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_enum$_StateCommand_$5",
+                        "typeString": "enum ShippingContract.StateCommand"
+                      }
+                    },
+                    "src": "1109:31:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_enum$_StateCommand_$5",
+                      "typeString": "enum ShippingContract.StateCommand"
+                    }
+                  },
+                  "id": 70,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1109:31:0"
+                },
+                {
+                  "eventCall": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 72,
+                        "name": "Id",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 63,
+                        "src": "1166:2:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "id": 73,
+                        "name": "status",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 7,
+                        "src": "1170:6:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_enum$_StateCommand_$5",
+                          "typeString": "enum ShippingContract.StateCommand"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        },
+                        {
+                          "typeIdentifier": "t_enum$_StateCommand_$5",
+                          "typeString": "enum ShippingContract.StateCommand"
+                        }
+                      ],
+                      "id": 71,
+                      "name": "Delivered",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 29,
+                      "src": "1156:9:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_event_nonpayable$_t_uint256_$_t_enum$_StateCommand_$5_$returns$__$",
+                        "typeString": "function (uint256,enum ShippingContract.StateCommand)"
+                      }
+                    },
+                    "id": 74,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1156:21:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 75,
+                  "nodeType": "EmitStatement",
+                  "src": "1151:26:0"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 77,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "setDelivered",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 64,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 63,
+                  "name": "Id",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 77,
+                  "src": "1082:7:0",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 62,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1082:4:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1081:9:0"
+            },
+            "returnParameters": {
+              "id": 65,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1098:0:0"
+            },
+            "scope": 88,
+            "src": "1060:127:0",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 86,
+              "nodeType": "Block",
+              "src": "1289:40:0",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 83,
+                        "name": "status",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 7,
+                        "src": "1312:6:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_enum$_StateCommand_$5",
+                          "typeString": "enum ShippingContract.StateCommand"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_enum$_StateCommand_$5",
+                          "typeString": "enum ShippingContract.StateCommand"
+                        }
+                      ],
+                      "id": 82,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": true,
+                      "lValueRequested": false,
+                      "nodeType": "ElementaryTypeNameExpression",
+                      "src": "1307:4:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_type$_t_uint256_$",
+                        "typeString": "type(uint256)"
+                      },
+                      "typeName": "uint"
+                    },
+                    "id": 84,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "typeConversion",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1307:12:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "functionReturnParameters": 81,
+                  "id": 85,
+                  "nodeType": "Return",
+                  "src": "1300:19:0"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 87,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "getStatus",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 78,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1259:2:0"
+            },
+            "returnParameters": {
+              "id": 81,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 80,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 87,
+                  "src": "1283:4:0",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 79,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1283:4:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1282:6:0"
+            },
+            "scope": 88,
+            "src": "1241:88:0",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "public"
+          }
+        ],
+        "scope": 89,
+        "src": "69:1265:0"
+      }
+    ],
+    "src": "33:1301:0"
+  },
+  "legacyAST": {
+    "attributes": {
+      "absolutePath": "/C/Users/Alban/Desktop/Git/ShippingProject/contracts/ShippingContract.sol",
+      "exportedSymbols": {
+        "ShippingContract": [
+          88
+        ]
+      }
+    },
+    "children": [
+      {
+        "attributes": {
+          "literals": [
+            "solidity",
+            ">=",
+            "0.4",
+            ".22",
+            "<",
+            "0.9",
+            ".0"
+          ]
+        },
+        "id": 1,
+        "name": "PragmaDirective",
+        "src": "33:32:0"
+      },
+      {
+        "attributes": {
+          "baseContracts": [
+            null
+          ],
+          "contractDependencies": [
+            null
+          ],
+          "contractKind": "contract",
+          "documentation": null,
+          "fullyImplemented": true,
+          "linearizedBaseContracts": [
+            88
+          ],
+          "name": "ShippingContract",
+          "scope": 89
+        },
+        "children": [
+          {
+            "attributes": {
+              "canonicalName": "ShippingContract.StateCommand",
+              "name": "StateCommand"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "name": "Pending"
+                },
+                "id": 2,
+                "name": "EnumValue",
+                "src": "218:7:0"
+              },
+              {
+                "attributes": {
+                  "name": "Shipped"
+                },
+                "id": 3,
+                "name": "EnumValue",
+                "src": "227:7:0"
+              },
+              {
+                "attributes": {
+                  "name": "Delivered"
+                },
+                "id": 4,
+                "name": "EnumValue",
+                "src": "236:9:0"
+              }
+            ],
+            "id": 5,
+            "name": "EnumDefinition",
+            "src": "199:47:0"
+          },
+          {
+            "attributes": {
+              "constant": false,
+              "name": "status",
+              "scope": 88,
+              "stateVariable": true,
+              "storageLocation": "default",
+              "type": "enum ShippingContract.StateCommand",
+              "value": null,
+              "visibility": "internal"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "contractScope": null,
+                  "name": "StateCommand",
+                  "referencedDeclaration": 5,
+                  "type": "enum ShippingContract.StateCommand"
+                },
+                "id": 6,
+                "name": "UserDefinedTypeName",
+                "src": "252:12:0"
+              }
+            ],
+            "id": 7,
+            "name": "VariableDeclaration",
+            "src": "252:19:0"
+          },
+          {
+            "attributes": {
+              "constant": true,
+              "name": "defaultChoice",
+              "scope": 88,
+              "stateVariable": true,
+              "storageLocation": "default",
+              "type": "enum ShippingContract.StateCommand",
+              "visibility": "internal"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "contractScope": null,
+                  "name": "StateCommand",
+                  "referencedDeclaration": 5,
+                  "type": "enum ShippingContract.StateCommand"
+                },
+                "id": 8,
+                "name": "UserDefinedTypeName",
+                "src": "278:12:0"
+              },
+              {
+                "attributes": {
+                  "argumentTypes": null,
+                  "isConstant": false,
+                  "isLValue": false,
+                  "isPure": true,
+                  "lValueRequested": false,
+                  "member_name": "Pending",
+                  "referencedDeclaration": null,
+                  "type": "enum ShippingContract.StateCommand"
+                },
+                "children": [
+                  {
+                    "attributes": {
+                      "argumentTypes": null,
+                      "overloadedDeclarations": [
+                        null
+                      ],
+                      "referencedDeclaration": 5,
+                      "type": "type(enum ShippingContract.StateCommand)",
+                      "value": "StateCommand"
+                    },
+                    "id": 9,
+                    "name": "Identifier",
+                    "src": "316:12:0"
+                  }
+                ],
+                "id": 10,
+                "name": "MemberAccess",
+                "src": "316:20:0"
+              }
+            ],
+            "id": 11,
+            "name": "VariableDeclaration",
+            "src": "278:58:0"
+          },
+          {
+            "attributes": {
+              "anonymous": false,
+              "documentation": null,
+              "name": "Creation"
+            },
+            "children": [
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "indexed": false,
+                      "name": "Id",
+                      "scope": 17,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "uint256",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "uint",
+                          "type": "uint256"
+                        },
+                        "id": 12,
+                        "name": "ElementaryTypeName",
+                        "src": "435:4:0"
+                      }
+                    ],
+                    "id": 13,
+                    "name": "VariableDeclaration",
+                    "src": "435:7:0"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "indexed": false,
+                      "name": "",
+                      "scope": 17,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "enum ShippingContract.StateCommand",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "contractScope": null,
+                          "name": "StateCommand",
+                          "referencedDeclaration": 5,
+                          "type": "enum ShippingContract.StateCommand"
+                        },
+                        "id": 14,
+                        "name": "UserDefinedTypeName",
+                        "src": "444:12:0"
+                      }
+                    ],
+                    "id": 15,
+                    "name": "VariableDeclaration",
+                    "src": "444:12:0"
+                  }
+                ],
+                "id": 16,
+                "name": "ParameterList",
+                "src": "434:23:0"
+              }
+            ],
+            "id": 17,
+            "name": "EventDefinition",
+            "src": "420:38:0"
+          },
+          {
+            "attributes": {
+              "anonymous": false,
+              "documentation": null,
+              "name": "Shipped"
+            },
+            "children": [
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "indexed": false,
+                      "name": "Id",
+                      "scope": 23,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "uint256",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "uint",
+                          "type": "uint256"
+                        },
+                        "id": 18,
+                        "name": "ElementaryTypeName",
+                        "src": "478:4:0"
+                      }
+                    ],
+                    "id": 19,
+                    "name": "VariableDeclaration",
+                    "src": "478:7:0"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "indexed": false,
+                      "name": "",
+                      "scope": 23,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "enum ShippingContract.StateCommand",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "contractScope": null,
+                          "name": "StateCommand",
+                          "referencedDeclaration": 5,
+                          "type": "enum ShippingContract.StateCommand"
+                        },
+                        "id": 20,
+                        "name": "UserDefinedTypeName",
+                        "src": "487:12:0"
+                      }
+                    ],
+                    "id": 21,
+                    "name": "VariableDeclaration",
+                    "src": "487:12:0"
+                  }
+                ],
+                "id": 22,
+                "name": "ParameterList",
+                "src": "477:23:0"
+              }
+            ],
+            "id": 23,
+            "name": "EventDefinition",
+            "src": "464:37:0"
+          },
+          {
+            "attributes": {
+              "anonymous": false,
+              "documentation": null,
+              "name": "Delivered"
+            },
+            "children": [
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "indexed": false,
+                      "name": "Id",
+                      "scope": 29,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "uint256",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "uint",
+                          "type": "uint256"
+                        },
+                        "id": 24,
+                        "name": "ElementaryTypeName",
+                        "src": "523:4:0"
+                      }
+                    ],
+                    "id": 25,
+                    "name": "VariableDeclaration",
+                    "src": "523:7:0"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "indexed": false,
+                      "name": "",
+                      "scope": 29,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "enum ShippingContract.StateCommand",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "contractScope": null,
+                          "name": "StateCommand",
+                          "referencedDeclaration": 5,
+                          "type": "enum ShippingContract.StateCommand"
+                        },
+                        "id": 26,
+                        "name": "UserDefinedTypeName",
+                        "src": "532:12:0"
+                      }
+                    ],
+                    "id": 27,
+                    "name": "VariableDeclaration",
+                    "src": "532:12:0"
+                  }
+                ],
+                "id": 28,
+                "name": "ParameterList",
+                "src": "522:23:0"
+              }
+            ],
+            "id": 29,
+            "name": "EventDefinition",
+            "src": "507:39:0"
+          },
+          {
+            "attributes": {
+              "canonicalName": "ShippingContract.colis",
+              "name": "colis",
+              "scope": 88,
+              "visibility": "public"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "constant": false,
+                  "name": "Id",
+                  "scope": 34,
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "type": "uint256",
+                  "value": null,
+                  "visibility": "internal"
+                },
+                "children": [
+                  {
+                    "attributes": {
+                      "name": "uint",
+                      "type": "uint256"
+                    },
+                    "id": 30,
+                    "name": "ElementaryTypeName",
+                    "src": "620:4:0"
+                  }
+                ],
+                "id": 31,
+                "name": "VariableDeclaration",
+                "src": "620:7:0"
+              },
+              {
+                "attributes": {
+                  "constant": false,
+                  "name": "status",
+                  "scope": 34,
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "type": "string",
+                  "value": null,
+                  "visibility": "internal"
+                },
+                "children": [
+                  {
+                    "attributes": {
+                      "name": "string",
+                      "type": "string"
+                    },
+                    "id": 32,
+                    "name": "ElementaryTypeName",
+                    "src": "638:6:0"
+                  }
+                ],
+                "id": 33,
+                "name": "VariableDeclaration",
+                "src": "638:13:0"
+              }
+            ],
+            "id": 34,
+            "name": "StructDefinition",
+            "src": "596:63:0"
+          },
+          {
+            "attributes": {
+              "documentation": null,
+              "implemented": true,
+              "isConstructor": false,
+              "kind": "function",
+              "modifiers": [
+                null
+              ],
+              "name": "newCommand",
+              "scope": 88,
+              "stateMutability": "payable",
+              "superFunction": null,
+              "visibility": "external"
+            },
+            "children": [
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "Id",
+                      "scope": 45,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "uint256",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "uint",
+                          "type": "uint256"
+                        },
+                        "id": 35,
+                        "name": "ElementaryTypeName",
+                        "src": "737:4:0"
+                      }
+                    ],
+                    "id": 36,
+                    "name": "VariableDeclaration",
+                    "src": "737:7:0"
+                  }
+                ],
+                "id": 37,
+                "name": "ParameterList",
+                "src": "736:9:0"
+              },
+              {
+                "attributes": {
+                  "parameters": [
+                    null
+                  ]
+                },
+                "children": [],
+                "id": 38,
+                "name": "ParameterList",
+                "src": "763:0:0"
+              },
+              {
+                "children": [
+                  {
+                    "children": [
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "isStructConstructorCall": false,
+                          "lValueRequested": false,
+                          "names": [
+                            null
+                          ],
+                          "type": "tuple()",
+                          "type_conversion": false
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "argumentTypes": [
+                                {
+                                  "typeIdentifier": "t_uint256",
+                                  "typeString": "uint256"
+                                },
+                                {
+                                  "typeIdentifier": "t_enum$_StateCommand_$5",
+                                  "typeString": "enum ShippingContract.StateCommand"
+                                }
+                              ],
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 17,
+                              "type": "function (uint256,enum ShippingContract.StateCommand)",
+                              "value": "Creation"
+                            },
+                            "id": 39,
+                            "name": "Identifier",
+                            "src": "779:8:0"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 36,
+                              "type": "uint256",
+                              "value": "Id"
+                            },
+                            "id": 40,
+                            "name": "Identifier",
+                            "src": "788:2:0"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 7,
+                              "type": "enum ShippingContract.StateCommand",
+                              "value": "status"
+                            },
+                            "id": 41,
+                            "name": "Identifier",
+                            "src": "792:6:0"
+                          }
+                        ],
+                        "id": 42,
+                        "name": "FunctionCall",
+                        "src": "779:20:0"
+                      }
+                    ],
+                    "id": 43,
+                    "name": "EmitStatement",
+                    "src": "774:25:0"
+                  }
+                ],
+                "id": 44,
+                "name": "Block",
+                "src": "763:46:0"
+              }
+            ],
+            "id": 45,
+            "name": "FunctionDefinition",
+            "src": "717:92:0"
+          },
+          {
+            "attributes": {
+              "documentation": null,
+              "implemented": true,
+              "isConstructor": false,
+              "kind": "function",
+              "modifiers": [
+                null
+              ],
+              "name": "setShipped",
+              "scope": 88,
+              "stateMutability": "nonpayable",
+              "superFunction": null,
+              "visibility": "public"
+            },
+            "children": [
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "Id",
+                      "scope": 61,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "uint256",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "uint",
+                          "type": "uint256"
+                        },
+                        "id": 46,
+                        "name": "ElementaryTypeName",
+                        "src": "893:4:0"
+                      }
+                    ],
+                    "id": 47,
+                    "name": "VariableDeclaration",
+                    "src": "893:7:0"
+                  }
+                ],
+                "id": 48,
+                "name": "ParameterList",
+                "src": "892:9:0"
+              },
+              {
+                "attributes": {
+                  "parameters": [
+                    null
+                  ]
+                },
+                "children": [],
+                "id": 49,
+                "name": "ParameterList",
+                "src": "909:0:0"
+              },
+              {
+                "children": [
+                  {
+                    "children": [
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "operator": "=",
+                          "type": "enum ShippingContract.StateCommand"
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 7,
+                              "type": "enum ShippingContract.StateCommand",
+                              "value": "status"
+                            },
+                            "id": 50,
+                            "name": "Identifier",
+                            "src": "920:6:0"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": true,
+                              "lValueRequested": false,
+                              "member_name": "Shipped",
+                              "referencedDeclaration": null,
+                              "type": "enum ShippingContract.StateCommand"
+                            },
+                            "children": [
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "overloadedDeclarations": [
+                                    null
+                                  ],
+                                  "referencedDeclaration": 5,
+                                  "type": "type(enum ShippingContract.StateCommand)",
+                                  "value": "StateCommand"
+                                },
+                                "id": 51,
+                                "name": "Identifier",
+                                "src": "929:12:0"
+                              }
+                            ],
+                            "id": 52,
+                            "name": "MemberAccess",
+                            "src": "929:20:0"
+                          }
+                        ],
+                        "id": 53,
+                        "name": "Assignment",
+                        "src": "920:29:0"
+                      }
+                    ],
+                    "id": 54,
+                    "name": "ExpressionStatement",
+                    "src": "920:29:0"
+                  },
+                  {
+                    "children": [
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "isStructConstructorCall": false,
+                          "lValueRequested": false,
+                          "names": [
+                            null
+                          ],
+                          "type": "tuple()",
+                          "type_conversion": false
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "argumentTypes": [
+                                {
+                                  "typeIdentifier": "t_uint256",
+                                  "typeString": "uint256"
+                                },
+                                {
+                                  "typeIdentifier": "t_enum$_StateCommand_$5",
+                                  "typeString": "enum ShippingContract.StateCommand"
+                                }
+                              ],
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 23,
+                              "type": "function (uint256,enum ShippingContract.StateCommand)",
+                              "value": "Shipped"
+                            },
+                            "id": 55,
+                            "name": "Identifier",
+                            "src": "965:7:0"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 47,
+                              "type": "uint256",
+                              "value": "Id"
+                            },
+                            "id": 56,
+                            "name": "Identifier",
+                            "src": "973:2:0"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 7,
+                              "type": "enum ShippingContract.StateCommand",
+                              "value": "status"
+                            },
+                            "id": 57,
+                            "name": "Identifier",
+                            "src": "977:6:0"
+                          }
+                        ],
+                        "id": 58,
+                        "name": "FunctionCall",
+                        "src": "965:19:0"
+                      }
+                    ],
+                    "id": 59,
+                    "name": "EmitStatement",
+                    "src": "960:24:0"
+                  }
+                ],
+                "id": 60,
+                "name": "Block",
+                "src": "909:85:0"
+              }
+            ],
+            "id": 61,
+            "name": "FunctionDefinition",
+            "src": "873:121:0"
+          },
+          {
+            "attributes": {
+              "documentation": null,
+              "implemented": true,
+              "isConstructor": false,
+              "kind": "function",
+              "modifiers": [
+                null
+              ],
+              "name": "setDelivered",
+              "scope": 88,
+              "stateMutability": "nonpayable",
+              "superFunction": null,
+              "visibility": "public"
+            },
+            "children": [
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "Id",
+                      "scope": 77,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "uint256",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "uint",
+                          "type": "uint256"
+                        },
+                        "id": 62,
+                        "name": "ElementaryTypeName",
+                        "src": "1082:4:0"
+                      }
+                    ],
+                    "id": 63,
+                    "name": "VariableDeclaration",
+                    "src": "1082:7:0"
+                  }
+                ],
+                "id": 64,
+                "name": "ParameterList",
+                "src": "1081:9:0"
+              },
+              {
+                "attributes": {
+                  "parameters": [
+                    null
+                  ]
+                },
+                "children": [],
+                "id": 65,
+                "name": "ParameterList",
+                "src": "1098:0:0"
+              },
+              {
+                "children": [
+                  {
+                    "children": [
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "operator": "=",
+                          "type": "enum ShippingContract.StateCommand"
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 7,
+                              "type": "enum ShippingContract.StateCommand",
+                              "value": "status"
+                            },
+                            "id": 66,
+                            "name": "Identifier",
+                            "src": "1109:6:0"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": true,
+                              "lValueRequested": false,
+                              "member_name": "Delivered",
+                              "referencedDeclaration": null,
+                              "type": "enum ShippingContract.StateCommand"
+                            },
+                            "children": [
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "overloadedDeclarations": [
+                                    null
+                                  ],
+                                  "referencedDeclaration": 5,
+                                  "type": "type(enum ShippingContract.StateCommand)",
+                                  "value": "StateCommand"
+                                },
+                                "id": 67,
+                                "name": "Identifier",
+                                "src": "1118:12:0"
+                              }
+                            ],
+                            "id": 68,
+                            "name": "MemberAccess",
+                            "src": "1118:22:0"
+                          }
+                        ],
+                        "id": 69,
+                        "name": "Assignment",
+                        "src": "1109:31:0"
+                      }
+                    ],
+                    "id": 70,
+                    "name": "ExpressionStatement",
+                    "src": "1109:31:0"
+                  },
+                  {
+                    "children": [
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "isStructConstructorCall": false,
+                          "lValueRequested": false,
+                          "names": [
+                            null
+                          ],
+                          "type": "tuple()",
+                          "type_conversion": false
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "argumentTypes": [
+                                {
+                                  "typeIdentifier": "t_uint256",
+                                  "typeString": "uint256"
+                                },
+                                {
+                                  "typeIdentifier": "t_enum$_StateCommand_$5",
+                                  "typeString": "enum ShippingContract.StateCommand"
+                                }
+                              ],
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 29,
+                              "type": "function (uint256,enum ShippingContract.StateCommand)",
+                              "value": "Delivered"
+                            },
+                            "id": 71,
+                            "name": "Identifier",
+                            "src": "1156:9:0"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 63,
+                              "type": "uint256",
+                              "value": "Id"
+                            },
+                            "id": 72,
+                            "name": "Identifier",
+                            "src": "1166:2:0"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 7,
+                              "type": "enum ShippingContract.StateCommand",
+                              "value": "status"
+                            },
+                            "id": 73,
+                            "name": "Identifier",
+                            "src": "1170:6:0"
+                          }
+                        ],
+                        "id": 74,
+                        "name": "FunctionCall",
+                        "src": "1156:21:0"
+                      }
+                    ],
+                    "id": 75,
+                    "name": "EmitStatement",
+                    "src": "1151:26:0"
+                  }
+                ],
+                "id": 76,
+                "name": "Block",
+                "src": "1098:89:0"
+              }
+            ],
+            "id": 77,
+            "name": "FunctionDefinition",
+            "src": "1060:127:0"
+          },
+          {
+            "attributes": {
+              "documentation": null,
+              "implemented": true,
+              "isConstructor": false,
+              "kind": "function",
+              "modifiers": [
+                null
+              ],
+              "name": "getStatus",
+              "scope": 88,
+              "stateMutability": "view",
+              "superFunction": null,
+              "visibility": "public"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "parameters": [
+                    null
+                  ]
+                },
+                "children": [],
+                "id": 78,
+                "name": "ParameterList",
+                "src": "1259:2:0"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "",
+                      "scope": 87,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "uint256",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "uint",
+                          "type": "uint256"
+                        },
+                        "id": 79,
+                        "name": "ElementaryTypeName",
+                        "src": "1283:4:0"
+                      }
+                    ],
+                    "id": 80,
+                    "name": "VariableDeclaration",
+                    "src": "1283:4:0"
+                  }
+                ],
+                "id": 81,
+                "name": "ParameterList",
+                "src": "1282:6:0"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "functionReturnParameters": 81
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "isStructConstructorCall": false,
+                          "lValueRequested": false,
+                          "names": [
+                            null
+                          ],
+                          "type": "uint256",
+                          "type_conversion": true
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "argumentTypes": [
+                                {
+                                  "typeIdentifier": "t_enum$_StateCommand_$5",
+                                  "typeString": "enum ShippingContract.StateCommand"
+                                }
+                              ],
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": true,
+                              "lValueRequested": false,
+                              "type": "type(uint256)",
+                              "value": "uint"
+                            },
+                            "id": 82,
+                            "name": "ElementaryTypeNameExpression",
+                            "src": "1307:4:0"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 7,
+                              "type": "enum ShippingContract.StateCommand",
+                              "value": "status"
+                            },
+                            "id": 83,
+                            "name": "Identifier",
+                            "src": "1312:6:0"
+                          }
+                        ],
+                        "id": 84,
+                        "name": "FunctionCall",
+                        "src": "1307:12:0"
+                      }
+                    ],
+                    "id": 85,
+                    "name": "Return",
+                    "src": "1300:19:0"
+                  }
+                ],
+                "id": 86,
+                "name": "Block",
+                "src": "1289:40:0"
+              }
+            ],
+            "id": 87,
+            "name": "FunctionDefinition",
+            "src": "1241:88:0"
+          }
+        ],
+        "id": 88,
+        "name": "ContractDefinition",
+        "src": "69:1265:0"
+      }
+    ],
+    "id": 89,
+    "name": "SourceUnit",
+    "src": "33:1301:0"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.5.16+commit.9c3226ce.Emscripten.clang"
+  },
+  "networks": {
+    "5777": {
+      "events": {},
+      "links": {},
+      "address": "0xf3B3B33ca3B1648c3aD2080782C4592B93c69c61",
+      "transactionHash": "0x7de9f91c57dd0d615f93f5a7d5b0133ba5e81c59075eb5e6f75f9171dbd072c6"
+    }
+  },
+  "schemaVersion": "3.3.4",
+  "updatedAt": "2021-03-26T10:32:11.706Z",
+  "networkType": "ethereum",
+  "devdoc": {
+    "methods": {}
+  },
+  "userdoc": {
+    "methods": {}
+  }
+}
